@@ -5,7 +5,6 @@ pipeline {
         stage("Install & Run Tests"){
             steps {
                 bat 'python -m pip install -r requirements.txt'
-                bat 'start /B python app.py'
                 bat 'python -m pytest -v tests/test_demo.py'
             }
         }
@@ -53,6 +52,3 @@ pipeline {
         }
     }
 }
-
-
-

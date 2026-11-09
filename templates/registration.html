@@ -11,14 +11,18 @@
             const pw = document.getElementById('pw').value;
             if (name.trim()===''){
                 alert("Name should not be empty");
+                return false;
             }
             if (pw === ''){
                 alert("Password should not be empty");
+                return false;
             }
 
-            if (pw.length() <= 5){
+            if (pw.length < 6){
                 alert("Password should be at least 6 characters");
+                return false;
             }
+            return true;
         }
     </script>
 </head>
