@@ -30,8 +30,8 @@ pipeline {
 
         stage('Push Image') {
             steps {
-                bat 'docker tag exam-repo:exam-img bavyaraghu/exam-repo:exam-img'
-                bat 'docker push bavyaraghu/exam-repo:exam-img'
+                bat 'docker tag exam-demo:exam-img bavyaraghu/exam-demo:exam-img'
+                bat 'docker push bavyaraghu/exam-demo:exam-img'
             }
         }
 
