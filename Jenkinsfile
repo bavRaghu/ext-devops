@@ -6,7 +6,7 @@ pipeline {
             steps {
                 bat 'python -m pip install -r requirements.txt'
                 bat 'start /B python app.py'
-                bat 'python -m pytest -v tests/test_demo'
+                bat 'python -m pytest -v tests/test_demo.py'
             }
         }
 
