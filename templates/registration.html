@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <script>
+        function validate(){
+            const name = document.getElementById("n").value;
+            const pw = document.getElementById('pw').value;
+            if (name.trim()===''){
+                alert("Name should not be empty");
+            }
+            if (pw === ''){
+                alert("Password should not be empty");
+            }
+
+            if (pw.length() <= 5){
+                alert("Password should be at least 6 characters");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form action="/register" method="post" onsubmit="return validate()">
+        <label for="n">Name: </label>
+        <input type="text" name="n" id="n"> <br>
+        <label for="pw">Password: </label>
+        <input type="password" name="pw" id="pw"> <br>
+        <input type="submit" value="Submit" id="sub"> <br>
+    </form>
+</body>
+</html>

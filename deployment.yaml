@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exam-demo-deployment
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: exam-demo
+  template:
+    metadata:
+      labels:
+        app: exam-demo
+    spec:
+      containers:
+        - name: exam-demo
+          image: bavyaraghu/exam-demo:exam-img
+          ports:
+            - containerPort: 5003
