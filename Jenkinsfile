@@ -19,13 +19,14 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(
                     credentialsId: 'exam-creds',
-                    usernameVariable: 'USER',
-                    passwordVariable: 'PWD'
+                    usernameVariable: 'DOCKER_USERNAME',
+                    passwordVariable: 'DOCKER_PASSWORD'
                 )]) {
-                    bat 'docker login -u "%USER%" -p "%PWD%"'
+                    bat 'echo %DOCKER_PASSWORD% | docker login -u "%DOCKER_USERNAME%" --password-stdin'
                 }
             }
         }
+
 
         stage('Push Image') {
             steps {
